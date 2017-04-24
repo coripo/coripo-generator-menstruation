@@ -1,0 +1,34 @@
+{
+  "name": "onecalendar-generator-menstruation",
+  "version": "1.0.0",
+  "description": "Menstruation event generator for OneCalendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariush-alipour/onecalendar-generator-menstruation.git"
+  },
+  "keywords": [
+    "calendar",
+    "onecalendar",
+    "onecalendar-generator",
+    "menstruation"
+  ],
+  "author": "Dariush Alipour <drsh.alipour@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dariush-alipour/onecalendar-generator-menstruation/issues"
+  },
+  "homepage": "https://github.com/dariush-alipour/onecalendar-generator-menstruation#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.2.0"
+  }
+}
