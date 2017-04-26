@@ -1,9 +1,10 @@
 const Generator = function Generator(dependencies) {
-  const id = 'dariush-alipour.onecalendar.generator.menstruation';
+  const id = 'dariush-alipour.coripo.generator.menstruation';
   const name = 'Menstruation';
   const inputs = [
     { id: 'start', label: 'When did your last period start?', type: 'date', comment: '' },
     { id: 'periodLength', label: 'How many days did it last?', type: 'number', comment: '' },
+    { id: 'cycleLength', label: 'How long is your menstrual cycle?', type: 'number', comment: '' },
   ];
   const helper = {
     getAdapter: dependencies.getAdapter,
