@@ -12,7 +12,7 @@ const menstruationGenerator = new MenstruationGenerator({
   primaryAdapterId: () => new GregorianAdapter().id,
 });
 
-describe('Basic Generator', () => {
+describe('Menstruation Generator', () => {
   describe('id', () => {
     it('should return a string', () => {
       expect(menstruationGenerator.id).to.be.a('string');
