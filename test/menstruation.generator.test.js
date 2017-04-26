@@ -5,7 +5,12 @@ const OneDate = require('coripo-core').OneDate;
 const GregorianAdapter = require('coripo-core').GregorianAdapter;
 const MenstruationGenerator = require('../src/menstruation.generator.js').Generator;
 
-const menstruationGenerator = new MenstruationGenerator(Event);
+const menstruationGenerator = new MenstruationGenerator({
+  Event,
+  OneDate,
+  getAdapter: () => new GregorianAdapter(),
+  primaryAdapterId: () => new GregorianAdapter().id,
+});
 
 describe('Basic Generator', () => {
   describe('id', () => {
@@ -26,16 +31,12 @@ describe('Basic Generator', () => {
     });
   });
 
-  describe('generate', () => {
+  describe('generate()', () => {
     it('should return an event object', () => {
       const event = menstruationGenerator.generate({
-        title: 'Thanksgiving at grandma\'s house',
-        note: 'Wear good stuff, put some cologne and DO NOT talk much',
-        since: new OneDate({ year: 2017, month: 11, day: 23 },
-          {
-            getAdapter: () => new GregorianAdapter(),
-            primaryAdapterId: new GregorianAdapter().id,
-          }),
+        start: { year: 2017, month: 4, day: 4 },
+        periodLength: 5,
+        cycleLength: 28,
       });
       expect(event).to.be.an('object');
     });

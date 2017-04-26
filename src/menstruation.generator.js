@@ -12,12 +12,32 @@ const Generator = function Generator(dependencies) {
   };
 
   const generate = (config) => {
-    const since = new dependencies.OneDate(config.start, helper);
-    const till = new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength);
     const event = new dependencies.Event({
       title: 'Period Days',
-      since,
-      till,
+      color: '#ee10f6',
+      since: new dependencies.OneDate(config.start, helper),
+      till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength),
+      repeats: [{ times: -1, cycle: 'year', step: 1 }],
+      sequels: [
+        {
+          title: 'Peak Ovulation',
+          color: '#00aeef',
+          since: { scale: 'day', offset: 5 },
+          till: { scale: 'day', offset: 14 },
+        },
+        {
+          title: 'Pre-Period',
+          color: '#f36',
+          since: { scale: 'day', offset: -2 },
+          till: { scale: 'day', offset: -1 },
+        },
+        {
+          title: 'Post-Period',
+          color: '#7e70ff',
+          since: { scale: 'day', offset: 5 },
+          till: { scale: 'day', offset: 6 },
+        },
+      ],
     });
     return event;
   };
