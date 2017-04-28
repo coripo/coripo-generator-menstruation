@@ -39,7 +39,7 @@ describe('Menstruation Generator', () => {
         cycleLength: 28,
       });
       expect(event).to.be.an('object');
-      expect(event.type).to.equal(menstruationGenerator.id);
+      expect(event.generatorId).to.equal(menstruationGenerator.id);
     });
   });
 });

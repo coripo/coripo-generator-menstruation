@@ -14,7 +14,7 @@ const Generator = function Generator(dependencies) {
   const generate = (config) => {
     const event = new dependencies.Event({
       id: config.id,
-      type: id,
+      generatorId: id,
       title: 'Period Days',
       color: '#ee10f6',
       since: new dependencies.OneDate(config.start, helper),
