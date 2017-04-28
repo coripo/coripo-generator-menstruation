@@ -32,13 +32,14 @@ describe('Menstruation Generator', () => {
   });
 
   describe('generate()', () => {
-    it('should return an event object', () => {
+    it('should return an event object with this generator type id', () => {
       const event = menstruationGenerator.generate({
         start: { year: 2017, month: 4, day: 4 },
         periodLength: 5,
         cycleLength: 28,
       });
       expect(event).to.be.an('object');
+      expect(event.type).to.equal(menstruationGenerator.id);
     });
   });
 });
