@@ -13,17 +13,19 @@ const Generator = function Generator(dependencies) {
 
   const generate = (config) => {
     const event = new dependencies.Event({
+      id: config.id,
       type: id,
       title: 'Period Days',
       color: '#ee10f6',
       since: new dependencies.OneDate(config.start, helper),
-      till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength),
+      till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength - 1),
+      overlap: { internal: 'trim' },
       repeats: [{ times: -1, cycle: 'day', step: config.cycleLength }],
       sequels: [
         {
           title: 'Peak Ovulation',
           color: '#00aeef',
-          since: { scale: 'day', offset: 5 },
+          since: { scale: 'day', offset: 10 },
           till: { scale: 'day', offset: 14 },
         },
         {
@@ -35,8 +37,8 @@ const Generator = function Generator(dependencies) {
         {
           title: 'Post-Period',
           color: '#7e70ff',
-          since: { scale: 'day', offset: 5 },
-          till: { scale: 'day', offset: 6 },
+          since: { scale: 'day', offset: config.periodLength },
+          till: { scale: 'day', offset: config.periodLength + 1 },
         },
       ],
     });
