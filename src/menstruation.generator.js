@@ -1,5 +1,5 @@
 const Generator = function Generator(dependencies) {
-  const id = 'dariush-alipour.coripo.generator.menstruation';
+  const id = 'coripo.coripo.generator.menstruation';
   const name = 'Menstruation';
   const inputs = [
     { id: 'start', label: 'When did your last period start?', type: 'date', comment: '' },
