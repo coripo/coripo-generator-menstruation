@@ -17,7 +17,7 @@ const Generator = function Generator(dependencies) {
       color: '#ee10f6',
       since: new dependencies.OneDate(config.start, helper),
       till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength),
-      repeats: [{ times: -1, cycle: 'year', step: 1 }],
+      repeats: [{ times: -1, cycle: 'day', step: config.cycleLength }],
       sequels: [
         {
           title: 'Peak Ovulation',
