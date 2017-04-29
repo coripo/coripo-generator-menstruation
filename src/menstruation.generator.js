@@ -19,7 +19,7 @@ const Generator = function Generator(dependencies) {
       color: '#ee10f6',
       since: new dependencies.OneDate(config.start, helper),
       till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength - 1),
-      overlap: { internal: 'trim', external: 'trim' },
+      overlap: { internal: 'trim', external: 'trim-forever' },
       repeats: [{ times: -1, cycle: 'day', step: config.cycleLength }],
       sequels: [
         {
