@@ -1,3 +1,1 @@
-const Generator = require('./src/menstruation.generator.js').Generator;
-
-exports.Generator = Generator;
+exports.Generator = require('./lib/menstruation.generator.js').Generator;
