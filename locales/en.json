@@ -1,0 +1,38 @@
+{
+  "translation": {
+    "basic-generator": {
+      "name": "Menstruation",
+      "description": "Track your menstruation cycle with ease",
+      "field-group": {
+        "basic": {
+          "title": "Basic",
+          "field": {
+            "start": {
+              "label": "When did your last period start?"
+            },
+            "period-length": {
+              "label": "How many days did it last?"
+            },
+            "cycle-length": {
+              "label": "How long is your menstrual cycle?"
+            }
+          }
+        }
+      },
+      "event": {
+        "period-days": {
+          "title": "Period Days"
+        },
+        "peak-ovulation": {
+          "title": "Peak Ovulation"
+        },
+        "pre-period": {
+          "title": "Pre-Period"
+        },
+        "post-period": {
+          "title": "Post-Period"
+        }
+      }
+    }
+  }
+}

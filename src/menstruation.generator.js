@@ -1,10 +1,41 @@
-const Generator = function Generator(dependencies) {
+const i18next = require('i18next');
+const locales = require('../locales/index.js');
+
+const Generator = function Generator(dependencies, config = {}) {
+  i18next.init({
+    lng: config.locale || 'en',
+    fallbackLng: 'en',
+    initImmediate: false,
+    resources: locales,
+  });
+  const trl = (key) => {
+    i18next.store.data = locales;
+    return i18next.t(key);
+  };
   const id = 'coripo.coripo.generator.menstruation';
-  const name = 'Menstruation';
+  const name = trl('menstruation-generator.name');
+  const description = trl('menstruation-generator.description');
   const inputs = [
-    { id: 'start', label: 'When did your last period start?', type: 'date', comment: '' },
-    { id: 'periodLength', label: 'How many days did it last?', type: 'number', comment: '' },
-    { id: 'cycleLength', label: 'How long is your menstrual cycle?', type: 'number', comment: '' },
+    {
+      title: trl('menstruation-generator.field-group.basic.title'),
+      fields: [
+        {
+          id: 'start',
+          label: trl('menstruation-generator.field-group.basic.field.start.label'),
+          type: 'date',
+        },
+        {
+          id: 'periodLength',
+          label: trl('menstruation-generator.field-group.basic.field.period-length.label'),
+          type: 'number',
+        },
+        {
+          id: 'cycleLength',
+          label: trl('menstruation-generator.field-group.basic.field.cycle-length.label'),
+          type: 'number',
+        },
+      ],
+    },
   ];
   const helper = {
     getAdapter: dependencies.getAdapter,
@@ -15,7 +46,7 @@ const Generator = function Generator(dependencies) {
     const event = new dependencies.Event({
       id: config.id,
       generatorId: id,
-      title: 'Period Days',
+      title: trl('menstruation-generator.event.period-days.title'),
       color: '#ee10f6',
       since: new dependencies.OneDate(config.start, helper),
       till: new dependencies.OneDate(config.start, helper).offsetDay(config.periodLength - 1),
@@ -23,19 +54,19 @@ const Generator = function Generator(dependencies) {
       repeats: [{ times: -1, cycle: 'day', step: config.cycleLength }],
       sequels: [
         {
-          title: 'Peak Ovulation',
+          title: trl('menstruation-generator.event.peak-ovulation.title'),
           color: '#00aeef',
           since: { scale: 'day', offset: 10 },
           till: { scale: 'day', offset: 14 },
         },
         {
-          title: 'Pre-Period',
+          title: trl('menstruation-generator.event.pre-period.title'),
           color: '#f36',
           since: { scale: 'day', offset: -2 },
           till: { scale: 'day', offset: -1 },
         },
         {
-          title: 'Post-Period',
+          title: trl('menstruation-generator.event.post-period.title'),
           color: '#7e70ff',
           since: { scale: 'day', offset: config.periodLength },
           till: { scale: 'day', offset: config.periodLength + 1 },

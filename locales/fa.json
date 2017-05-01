@@ -1,0 +1,38 @@
+{
+  "translation": {
+    "basic-generator": {
+      "name": "قاعدگی",
+      "description": "دوره قاعدگی خود را به سادگی ثبت و پیشبینی کنید",
+      "field-group": {
+        "basic": {
+          "title": "اصلی",
+          "field": {
+            "start": {
+              "label": "آخرین قاعدگی شما کی شروع شد؟"
+            },
+            "period-length": {
+              "label": "چند روز طول کشید؟"
+            },
+            "cycle-length": {
+              "label": "طول دوره قاعدگی شما چند روز است؟"
+            }
+          }
+        }
+      },
+      "event": {
+        "period-days": {
+          "title": "خونریزی قاعدگی"
+        },
+        "peak-ovulation": {
+          "title": "تخمک گذاری"
+        },
+        "pre-period": {
+          "title": "قبل قاعدگی"
+        },
+        "post-period": {
+          "title": "بعد قاعدگی"
+        }
+      }
+    }
+  }
+}
