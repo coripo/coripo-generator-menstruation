@@ -1,6 +1,6 @@
 {
   "name": "coripo-generator-menstruation",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Menstruation event generator for Coripo",
   "main": "index.js",
   "babel": {

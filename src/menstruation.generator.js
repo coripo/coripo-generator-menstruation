@@ -10,6 +10,7 @@ const Generator = function Generator(dependencies, config = {}) {
   });
   const trl = (key) => {
     i18next.store.data = locales;
+    i18next.changeLanguage(config.locale || 'en');
     return i18next.t(key);
   };
   const id = 'coripo.coripo.generator.menstruation';
@@ -76,7 +77,7 @@ const Generator = function Generator(dependencies, config = {}) {
     return event;
   };
 
-  return { id, name, inputs, generate };
+  return { id, name, description, inputs, generate };
 };
 
 exports.Generator = Generator;
