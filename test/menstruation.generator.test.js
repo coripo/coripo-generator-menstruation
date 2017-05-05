@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 const Event = require('coripo-core').Event;
 const OneDate = require('coripo-core').OneDate;
 const GregorianAdapter = require('coripo-core').GregorianAdapter;
-const MenstruationGenerator = require('../src/menstruation.generator.js').Generator;
+const MenstruationGenerator = require('../src/menstruation.generator.js');
 
 const menstruationGenerator = new MenstruationGenerator({
   Event,

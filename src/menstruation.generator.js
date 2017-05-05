@@ -81,4 +81,4 @@ const Generator = function Generator(dependencies, config = {}) {
   return { id, name, description, inputs, generate };
 };
 
-exports.Generator = Generator;
+module.exports = Generator;
